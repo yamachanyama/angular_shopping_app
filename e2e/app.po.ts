@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class ErrorResearchPage {
+export class AngularShoppingAppPage {
   navigateTo() {
     return browser.get('/');
   }

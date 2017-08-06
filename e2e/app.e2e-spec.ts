@@ -1,10 +1,10 @@
-import { ErrorResearchPage } from './app.po';
+import { AngularShoppingAppPage } from './app.po';
 
-describe('error-research App', () => {
-  let page: ErrorResearchPage;
+describe('angular-shopping-app', () => {
+  let page: AngularShoppingAppPage;
 
   beforeEach(() => {
-    page = new ErrorResearchPage();
+    page = new AngularShoppingAppPage();
   });
 
   it('should display welcome message', () => {

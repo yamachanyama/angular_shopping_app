@@ -1,0 +1,19 @@
+<md-card>
+  <md-card-content>
+    <div fxLayoutWrap fxLayoutAlign="space-around center">
+      <md-card *ngFor = "let goods of goodsList" class="example-card" fxFlex="32%" fxFlex.xs="100%" margin-bottom="10px">
+        <md-card-header>
+          <md-card-title>{{goods.goodsNm}}</md-card-title>
+          <md-card-subtitle>「{{goods.basicInfo}}」</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="https://docs.google.com/uc?export=view&amp;id={{goods.picture}}">
+        <md-card-content>
+          <p>¥{{goods.price}}</p>
+          <p *ngIf="goods.stock > 5">在庫あり</p>
+          <p *ngIf="goods.stock < 5 && goods.stock > 0">残りわずか</p>
+          <p *ngIf="goods.stock == 0">在庫切れ</p> 
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-card-content>
+</md-card>
