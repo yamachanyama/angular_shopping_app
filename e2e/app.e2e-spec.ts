@@ -1,14 +1,14 @@
-import { AngularShoppingAppPage } from './app.po';
+import { ErrorResearchPage } from './app.po';
 
-describe('angular-shopping-app App', () => {
-  let page: AngularShoppingAppPage;
+describe('error-research App', () => {
+  let page: ErrorResearchPage;
 
   beforeEach(() => {
-    page = new AngularShoppingAppPage();
+    page = new ErrorResearchPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
