@@ -1,1 +1,39 @@
-<h2>goodslist</h2>
+<md-card>
+  <md-card-content>
+    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around center">
+      <md-card fxFlex="60%" fxFlex.xs="100%">
+        <img md-card-image src="{{googleDrivePictureUrl}}{{goods.picture}}" style="margin-top:0px;">
+      </md-card>
+      <md-card fxFlex="38%" fxFlex.xs="100%">
+        <md-card-content>
+          <p>商品名：{{goods.goodsNm}}</p>
+          <p>値段：¥{{goods.price}}</p>
+          <p *ngIf="goods.stock > 5">在庫：{{goods.stock}}(在庫あり)</p>
+          <p *ngIf="goods.stock < 5 && goods.stock > 0">在庫：{{goods.stock}}(残りわずか)</p>
+          <p *ngIf="goods.stock == 0">在庫：{{goods.stock}}(在庫切れ)</p>
+          <p>基本情報：{{goods.basicInfo}}</p>
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-card-content>
+  <br/>
+  <md-card-content>
+    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around center">
+      <button md-raised-button fxFlex="80%" fxFlex.xs="80%" color="primary">カートに入れる</button>
+    </div>
+  </md-card-content>
+  <br/>
+  <br/>
+  <md-card-content>
+    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around center">
+      <md-input-container fxFlex="98%" fxFlex.xs="98%" >
+        <textarea mdInput placeholder="ユーザレビュー入力" rows="10"></textarea>
+      </md-input-container>
+    </div>
+  </md-card-content>
+  <md-card-content>
+    <div *ngIf="goods" fxLayoutWrap fxLayout="column" fxLayoutAlign="space-around end">
+      <button md-raised-button color="primary">ユーザレビューを書く</button>
+    </div>
+  </md-card-content>
+</md-card>

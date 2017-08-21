@@ -1,0 +1,34 @@
+<md-toolbar color="primary">
+    <img src="../favicon.ico">
+    <span class="example-spacer"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu" #menuTrigger="mdMenuTrigger" (mouseenter)="menuTrigger.openMenu()">
+        <md-icon>menu</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+        <button md-menu-item routerLink="/">
+            <md-icon>fingerprint</md-icon>
+            <span>ログイン</span>
+        </button>
+        <button md-menu-item routerLink="/">
+            <md-icon>account_box</md-icon>
+            <span>新規登録</span>
+        </button>
+        <button md-menu-item routerLink="/goodsregist">
+            <md-icon>add_to_photos</md-icon>
+            <span>商品登録</span>
+        </button>
+        <button md-menu-item routerLink="/goodslist">
+            <md-icon>search</md-icon>
+            <span>登録商品検索</span>
+        </button>
+        <button md-menu-item routerLink="/">
+            <md-icon>face</md-icon>
+            <span>ユーザ編集</span>
+        </button>
+        <button md-menu-item routerLink="/">
+            <md-icon>block</md-icon>
+            <span>退会</span>
+        </button>
+    </md-menu>
+
+</md-toolbar>
