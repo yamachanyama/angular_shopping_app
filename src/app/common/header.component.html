@@ -1,3 +1,4 @@
+<!-- 99_ヘッダ -->
 <md-toolbar color="primary">
     <img src="../favicon.ico">
     <span class="example-spacer"></span>
@@ -5,11 +6,11 @@
         <md-icon>menu</md-icon>
     </button>
     <md-menu #menu="mdMenu">
-        <button md-menu-item routerLink="/">
+        <button md-menu-item routerLink="/login">
             <md-icon>fingerprint</md-icon>
             <span>ログイン</span>
         </button>
-        <button md-menu-item routerLink="/">
+        <button md-menu-item routerLink="/userregist">
             <md-icon>account_box</md-icon>
             <span>新規登録</span>
         </button>
@@ -17,15 +18,15 @@
             <md-icon>add_to_photos</md-icon>
             <span>商品登録</span>
         </button>
-        <button md-menu-item routerLink="/goodslist">
+        <button md-menu-item routerLink="/goodssearch">
             <md-icon>search</md-icon>
             <span>登録商品検索</span>
         </button>
-        <button md-menu-item routerLink="/">
+        <button md-menu-item routerLink="/userupdate">
             <md-icon>face</md-icon>
             <span>ユーザ編集</span>
         </button>
-        <button md-menu-item routerLink="/">
+        <button md-menu-item routerLink="/unsubscribe">
             <md-icon>block</md-icon>
             <span>退会</span>
         </button>

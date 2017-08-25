@@ -8,7 +8,7 @@ import { GoodsService } from "../services/goods.service";
 import { CONST } from '../common/const';
 
 @Component({
-  selector: 'goodsdetail-root',
+  selector: 'app-goodsdetail',
   templateUrl: './goodsdetail.component.html'
 })
 

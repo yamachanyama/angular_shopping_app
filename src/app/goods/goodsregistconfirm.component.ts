@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
-  selector: 'goodsconfirm-root',
-  templateUrl: './goodsconfirm.component.html',
-  styleUrls: ['./goodsconfirm.component.css'],
+  selector: 'app-goodsregistconfirm',
+  templateUrl: './goodsregistconfirm.component.html',
+  styleUrls: ['./goodsregistconfirm.component.css'],
 })
-export class GoodsConfirmComponent{
+export class GoodsRegistConfirmComponent{
   @BlockUI() blockUI: NgBlockUI;
   goods : Goods;
   
@@ -35,7 +35,7 @@ export class GoodsConfirmComponent{
   /** 商品登録完了後の画面遷移 */
   goRegistFinish() {
     this.blockUI.stop();
-    this.router.navigate(['goodsfinish']);
+    this.router.navigate(['goodsregistfinish']);
   }
 
 

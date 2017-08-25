@@ -4,7 +4,7 @@ import { GoodsPassService } from '../services/goodspass.service';
 import { Goods } from '../services/goods';
 
 @Component({
-  selector: 'goodsregist-root',
+  selector: 'app-goodsregist',
   templateUrl: './goodsregist.component.html',
   styleUrls: ['./goodsregist.component.css'],
 })

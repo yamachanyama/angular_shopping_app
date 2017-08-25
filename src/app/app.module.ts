@@ -20,13 +20,24 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 /* コンポーネントを追加する場合は以下import追加 */
 import { AppComponent } from './app.component';
-import { TopComponent } from './top/top.component';
-import { Header } from './common/header';
-import { GoodsListComponent } from './goods/goodslist.component';
-import { GoodsDetailComponent } from './goods/goodsdetail.component';
-import { GoodsRegistComponent } from './goods/goodsregist.component';
-import { GoodsConfirmComponent } from './goods/goodsconfirm.component';
-import { GoodsFinishComponent } from './goods/goodsfinish.component';
+import { TopComponent }   from './top/top.component';
+import { UserRegistComponent } from './user/userregist.component';
+import { UserRegistFinishComponent } from './user/userregistfinish.component';
+import { LoginComponent } from './login/login.component';
+import { GoodsSearchComponent }      from './goods/goodssearch.component';
+import { GoodsDetailComponent }  from './goods/goodsdetail.component';
+import { GoodsRegistComponent }  from './goods/goodsregist.component';
+import { GoodsRegistConfirmComponent }  from './goods/goodsregistconfirm.component';
+import { GoodsRegistFinishComponent }  from './goods/goodsregistfinish.component';
+import { RegistedGoodsSearchComponent } from './goods/registedgoodssearch.component';
+import { UserUpdateComponent } from './user/userupdate.component';
+import { UserUpdateConfirmComponent } from './user/userupdateconfirm.component';
+import { UserUpdateFinishComponent } from './user/userupdatefinish.component';
+import { UnsubscribeComponent } from './user/unsubscribe.component';
+import { UnsubscribeConfirmComponent } from './user/unsubscribeconfirm.component';
+import { UnsubscribeFinishComponent } from './user/unsubscribefinish.component';
+import { HeaderComponent } from './common/header.component';
+
 
 
 //商品情報取得用service
@@ -39,12 +50,22 @@ import { GoodsPassService } from './services/goodspass.service';
   declarations: [
     AppComponent,
     TopComponent,
-    Header,
-    GoodsListComponent,
+    UserRegistComponent,
+    UserRegistFinishComponent,
+    LoginComponent,
+    GoodsSearchComponent,
     GoodsDetailComponent,
     GoodsRegistComponent,
-    GoodsConfirmComponent,
-    GoodsFinishComponent
+    GoodsRegistConfirmComponent,
+    GoodsRegistFinishComponent,
+    RegistedGoodsSearchComponent,
+    UserUpdateComponent,
+    UserUpdateConfirmComponent,
+    UserUpdateFinishComponent,
+    UnsubscribeComponent,
+    UnsubscribeConfirmComponent,
+    UnsubscribeFinishComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

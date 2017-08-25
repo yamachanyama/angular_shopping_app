@@ -7,12 +7,12 @@ import { GoodsService } from "../services/goods.service";
 import { CONST } from '../common/const';
 
 @Component({
-  selector: 'goodslist-root',
-  templateUrl: './goodslist.component.html',
-  styleUrls: ['./goodslist.component.css'],
+  selector: 'goodssearch-root',
+  templateUrl: './goodssearch.component.html',
+  styleUrls: ['./goodssearch.component.css'],
 })
 
-export class GoodsListComponent implements OnInit{
+export class GoodsSearchComponent implements OnInit{
     
     //コンポーネント生成時の処理
     constructor(
