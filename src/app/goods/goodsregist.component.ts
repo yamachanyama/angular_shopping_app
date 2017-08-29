@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { FancyImageUploaderOptions, UploadedFile } from 'ng2-fancy-image-uploader';
 import { GoodsPassService } from '../services/goodspass.service';
 import { Goods } from '../services/goods';
+import { CONST} from '../common/const';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class GoodsRegistComponent{
   options: FancyImageUploaderOptions = {
     thumbnailHeight: 150,
     thumbnailWidth: 150,
-    uploadUrl: 'http://localhost:8080/api/goods/upload',
+    uploadUrl: CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + 'upload',
     allowedImageTypes: ['image/png', 'image/jpeg'],
     maxImageSize: 3
   };

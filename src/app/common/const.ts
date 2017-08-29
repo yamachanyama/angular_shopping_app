@@ -21,7 +21,7 @@ export class CONST {
         /** Http Method(PUT) */
         HTTP_PUT : 'put',
         /** Http Method(DELETE) */
-        HTTP_DELETE : 'delete'
+        HTTP_DELETE : 'delete',
     }
 
 }
