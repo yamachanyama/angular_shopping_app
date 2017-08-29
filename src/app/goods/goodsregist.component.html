@@ -53,8 +53,10 @@
                         <br/>
                     </tr>
                     <tr>
-                        <md-input-container>
-                            <input mdInput placeholder="画像" [(ngModel)]="goods.picture" [ngModelOptions]="{standalone: true}">  
+                        <label>画像</label>
+                        <fancy-image-uploader [options]="options" (onUpload)="onUpload($event)"></fancy-image-uploader>
+                        <md-input-container class="hidden">
+                            <input mdInput placeholder="画像" class="hidden" maxlength="255" [(ngModel)]="goods.picture" [ngModelOptions]="{standalone: true}">
                         </md-input-container>
                         <br/>
                         <br/>

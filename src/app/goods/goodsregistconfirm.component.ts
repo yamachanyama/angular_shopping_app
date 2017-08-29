@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GoodsPassService } from '../services/goodspass.service';
 import { GoodsService } from '../services/goods.service';
 import { Goods } from '../services/goods';
+import { CONST } from '../common/const';
 import { Router } from '@angular/router';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
@@ -13,6 +14,8 @@ import { BlockUI, NgBlockUI } from 'ng-block-ui';
 export class GoodsRegistConfirmComponent{
   @BlockUI() blockUI: NgBlockUI;
   goods : Goods;
+  //Google Drive上の画像URL
+  googleDrivePictureUrl = CONST.REST_API.GOOGLE_DRIVE_PICTURE_URL;
   
   constructor(private goodsPassService: GoodsPassService, private goodsService : GoodsService, private router: Router) { 
     this.goods = goodsPassService.getGoods();

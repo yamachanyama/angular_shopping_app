@@ -30,7 +30,9 @@
                     <br/>
                 </tr>
                 <tr>
-                    <label>画像：{{goods.picture}}</label>
+                    <label>画像：</label>
+                    <br/>
+                    <img *ngIf="goods.picture" src="{{googleDrivePictureUrl}}{{goods.picture}}">
                     <br/>
                     <br/>
                 </tr>

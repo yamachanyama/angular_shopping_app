@@ -16,6 +16,7 @@ import {
   MdMenuModule,
   MdIconModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FancyImageUploaderModule } from 'ng2-fancy-image-uploader';
 
 
 /* コンポーネントを追加する場合は以下import追加 */
@@ -84,7 +85,8 @@ import { GoodsPassService } from './services/goodspass.service';
     MdIconModule,
     MdMenuModule,
     FlexLayoutModule,
-    BlockUIModule
+    BlockUIModule,
+    FancyImageUploaderModule
   ],
   providers: [
     GoodsService,
