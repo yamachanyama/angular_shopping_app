@@ -26,8 +26,6 @@ export class RegistedGoodsSearchComponent {
   goodsList : Goods[];
   // キーワード検索
   searchKeyword: string = '';
-  //Http(Get)パラメータ
-  getGoodsParam : GetGoodsParam;
   //Google Drive上の画像URL
   googleDrivePictureUrl = CONST.REST_API.GOOGLE_DRIVE_PICTURE_URL;
 
