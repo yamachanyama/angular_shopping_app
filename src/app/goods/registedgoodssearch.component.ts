@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Goods } from "../services/goods";
-import { GetGoodsParam } from "../services/getgoodsparam";
 import { GoodsService } from "../services/goods.service";
 
 import { CONST } from '../common/const';
