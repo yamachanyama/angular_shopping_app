@@ -21,7 +21,7 @@
                 </md-card-content>
                 <md-card-content>
                 <p>価格：¥{{goods.price}}</p>
-                <p *ngIf="goods.stock > 5">在庫：{{goods.stock}}(在庫あり)</p>
+                <p *ngIf="goods.stock >= 5">在庫：{{goods.stock}}(在庫あり)</p>
                 <p *ngIf="goods.stock < 5 && goods.stock > 0">在庫：{{goods.stock}}(残りわずか)</p>
                 <p *ngIf="goods.stock == 0">在庫：{{goods.stock}}(在庫切れ)</p>
                 </md-card-content>
