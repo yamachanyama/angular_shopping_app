@@ -1,1 +1,31 @@
 <!-- 10_登録商品検索 -->
+<md-card>
+    <md-card-content>
+        <div fxLayoutWrap fxLayoutAlign="end center" fxLayout="row">
+            <md-input-container fxFlex="32%" fxFlex.xs="80%">
+                <input mdInput placeholder="キーワードで探す" [(ngModel)]="searchKeyword">
+            </md-input-container>
+            <button md-icon-button (click)="onClickSearchByKeyword()">
+                <md-icon mdSuffix color="primary">search</md-icon>
+            </button>
+        </div>
+        <div class="button-row">
+            <button md-button color="primary" (click)="onClickSort('price','asc')"><span>価格順</span><md-icon>sort</md-icon></button>
+            <button md-button color="primary" (click)="onClickSort('regist_date','desc')"><span>新着順</span><md-icon>sort</md-icon></button>
+        </div>
+        <div fxLayoutWrap fxLayoutAlign="space-around center" fxLayout="row">
+            <md-card *ngFor = "let goods of goodsList" fxFlex="32%" fxFlex.xs="100%">
+                <a [routerLink]="['/goodsdetail', goods.goodsId]"><img md-card-image src="{{googleDrivePictureUrl}}{{goods.picture}}" ></a>
+                <md-card-content>
+                <a md-raised-button [routerLink]="['/goodsdetail', goods.goodsId]">{{goods.goodsNm}}</a>
+                </md-card-content>
+                <md-card-content>
+                <p>価格：¥{{goods.price}}</p>
+                <p *ngIf="goods.stock > 5">在庫：{{goods.stock}}(在庫あり)</p>
+                <p *ngIf="goods.stock < 5 && goods.stock > 0">在庫：{{goods.stock}}(残りわずか)</p>
+                <p *ngIf="goods.stock == 0">在庫：{{goods.stock}}(在庫切れ)</p>
+                </md-card-content>
+            </md-card>
+        </div>
+    </md-card-content>
+</md-card>

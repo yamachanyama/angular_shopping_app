@@ -3,7 +3,6 @@ import { Headers, Http, Jsonp, RequestOptionsArgs, RequestOptions, URLSearchPara
 import { Observable } from  "rxjs/Observable";
 import "rxjs/add/operator/map";
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
-
 import { Goods } from './goods';
 import { CONST } from '../common/const';
 
@@ -18,10 +17,11 @@ export class GoodsService {
   private headers = new Headers({'Content-Type': 'application/json'});
 
 
+
   /** 商品一覧取得 */
-  getGoodes(): Observable<Goods[]> {
+  getGoodes(sortField: string, sortOrder: string, conditionField: string, conditionValue: string): Observable<Goods[]> {
     //リクエストパラメータセット
-    let option = this.setHttpGetParam(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL);
+    let option = this.setHttpGetParam(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL, sortField, sortOrder, conditionField, conditionValue);
 
     //Rest APIコール
     return this.jsonp.request(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL, option)
@@ -38,11 +38,31 @@ export class GoodsService {
      
   }
 
+  // /** 商品一覧取得(ソート済み) */
+  // getSortedGoodes(field: string): Observable<Goods[]> {
+  //   //リクエストパラメータセット
+  //   let option = this.setHttpGetParam(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + field);
+    
+  //   //Rest APIコール
+  //   return this.jsonp.request(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + field, option)
+  //     .map((response) => {
+  //       let content;
+  //       let obj = response.json();
+  //       content = {
+  //         error: null,
+  //         data: obj
+  //       };
+  //       console.dir(content);
+  //       return content;
+  //     });
+
+  // }
+
   
   /** 商品取得(商品ID) */
   getGoods(id: number): Observable<Goods> {
-    //リクエストパラメータセット
-    let option = this.setHttpGetParam(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + id);
+
+    let option = this.setHttpGetParam(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + id, null, null, null, null);
 
     //Rest APIコール
     return this.jsonp.request(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + id, option)
@@ -73,8 +93,13 @@ export class GoodsService {
 
 
   //Http(Get)通信のリクエストパラメータをセットする
-  private setHttpGetParam(url: string): RequestOptions {
+  private setHttpGetParam(url: string, sortField: string, sortOrder: string, conditionField: string, conditionValue: string): RequestOptions {
     let param = new URLSearchParams();
+
+    param.append('sortField', sortField);
+    param.append('sortOrder', sortOrder);
+    param.append('conditionField', conditionField);
+    param.append('conditionValue', conditionValue);
     param.set("callback", CONST.REST_API.JSONP_CALLBACK_NAME);
     let options: RequestOptionsArgs = {
       method: CONST.REST_API.HTTP_GET,

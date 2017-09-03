@@ -3,7 +3,9 @@ export class CONST {
     /** Rest API関係の定数 */
     public static REST_API  = {
         /** APIのベースURL */
-        BASE_URL : 'https://shopping-app-spring-boot.herokuapp.com/api/',
+        //BASE_URL : 'https://shopping-app-spring-boot.herokuapp.com/api/',
+        BASE_URL : 'http://localhost:8080/api/',
+        
         /** Goodle Drive上の画像参照URL */
         GOOGLE_DRIVE_PICTURE_URL : 'https://docs.google.com/uc?export=view&id=',
         /** goodsAPI */

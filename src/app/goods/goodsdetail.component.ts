@@ -17,12 +17,12 @@ export class GoodsDetailComponent implements OnInit{
   goods: Goods;
   //Google Drive上の画像URL
   googleDrivePictureUrl = CONST.REST_API.GOOGLE_DRIVE_PICTURE_URL;
-
+  
   //コンポーネント起動時に、コンストラクタで利用するものをインスタンス化
   constructor(
     private goodsService: GoodsService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
   ) {}
 
 

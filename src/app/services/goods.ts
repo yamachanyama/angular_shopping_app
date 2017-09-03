@@ -1,21 +1,21 @@
 /** 商品 */
 export class Goods {
     //商品ID
-    goodsId : String;
+    goodsId : string;
     //商品名
-    goodsNm : String;
+    goodsNm : string;
     //画像パス
-    picture : String;
+    picture : string;
     //値段
     price : number;
     //在庫数
     stock : number;
     //基本情報
-    basicInfo : String;
+    basicInfo : string;
     //キーワード
-    keyword : String;
+    keyword : string;
     //登録者ID
-    registerId : String;
+    registerId : string;
     //登録日時
     registDate : Date;
     //更新日時
