@@ -26,5 +26,16 @@ export class CONST {
         HTTP_DELETE : 'delete',
     }
 
+    /** 正規表現 */
+    public static REGEX = {
+        /** パスワード */
+        PASSWORD : /^[a-z\d]{6,12}$/i,
+        /** フリガナ */
+        FURIGANA : /[ァ-ヴ]/,
+        /** メールアドレス */
+        EMAIL : /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+        /** 電話番号 */
+        TEL : /^[0-9]{11}$/,
+    }
 }
 

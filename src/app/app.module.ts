@@ -44,6 +44,9 @@ import { HeaderComponent } from './common/header.component';
 //商品情報取得用service
 import { GoodsService } from './services/goods.service';
 import { GoodsPassService } from './services/goodspass.service';
+//ユーザ情報取得用service
+import { UserService } from './services/user.service';
+import { UserPassService } from './services/userpass.service';
 
 
 @NgModule({
@@ -90,7 +93,9 @@ import { GoodsPassService } from './services/goodspass.service';
   ],
   providers: [
     GoodsService,
-    GoodsPassService
+    GoodsPassService,
+    UserService,
+    UserPassService
   ],
   bootstrap: [AppComponent]
 })

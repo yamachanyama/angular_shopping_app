@@ -1,23 +1,23 @@
 /** ユーザ */
 export class User {
     //ユーザID
-    userId : String;
+    userId : string;
     //パスワード
-    password : String;
+    password : string;
     //パスワード(確認用)
-    passwordConf : String;
+    passwordConf : string;
     //名前
-    userNm : String;
+    userNm : string;
     //フリガナ
-    userFurigana : String;
+    userFurigana : string;
     //電話番号
-    tel : String;
+    tel : string;
     //メールアドレス
-    mail : String;
+    mail : string;
     //郵便番号
-    postalCode : String;
+    postalCode : string;
     //住所
-    address : String;
+    address : string;
     //登録日時
     registDate : Date;
     //更新日時

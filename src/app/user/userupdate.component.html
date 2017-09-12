@@ -1,1 +1,115 @@
 <!-- 14_ユーザ編集 -->
+<md-card>
+    <div fxLayoutWrap fxLayoutAlign="space-around center">
+        <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+            <h2>ユーザ編集</h2>
+            <form [formGroup]="userForm">
+                <table>
+                    <!-- ユーザIDは変更不可(システムで採番される)
+                    <tr>
+                        <md-input-container>
+                            <input mdInput  placeholder="ユーザID" [formControl]="userForm.controls['userId']" maxlength="10" [(ngModel)]="user.userId">
+                                <md-error *ngIf="!userForm.controls['userId'].valid && userForm.controls['userId'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                     -->
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="パスワード" [formControl]="userForm.controls['password']" maxlength="12" [(ngModel)]="user.password" type="password">
+                                <md-error *ngIf="userForm.controls['password'].hasError('required') && userForm.controls['password'].touched">
+                                    入力してください
+                                </md-error>
+                                <md-error *ngIf="userForm.controls['password'].hasError('pattern') && userForm.controls['password'].touched">
+                                    6~12桁の半角英数字で入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="パスワード(確認用)" [formControl]="userForm.controls['passwordConf']" maxlength="12" [(ngModel)]="user.passwordConf" type="password">
+                                <md-error *ngIf="userForm.controls['passwordConf'].hasError('required') && userForm.controls['passwordConf'].touched">
+                                    入力してください
+                                </md-error>
+                                <md-error *ngIf="userForm.controls['passwordConf'].hasError('pattern') && userForm.controls['passwordConf'].touched">
+                                    6~12桁の半角英数字で入力してください
+                                </md-error>
+                                <md-hint *ngIf="userForm.hasError('mismatch') && userForm.controls['passwordConf'].touched">
+                                    パスワードとパスワード(確認用)の入力内容がちがいます
+                                </md-hint>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="名前" [formControl]="userForm.controls['userNm']" maxlength="255" [(ngModel)]="user.userNm">
+                                <md-error *ngIf="!userForm.controls['userNm'].valid && userForm.controls['userNm'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>                    
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="フリガナ(全角カタカナ)" [formControl]="userForm.controls['userFurigana']" maxlength="255" [(ngModel)]="user.userFurigana">
+                                <md-error *ngIf="userForm.controls['userFurigana'].hasError('required') && userForm.controls['userFurigana'].touched">
+                                    入力してください
+                                </md-error>
+                                <md-error *ngIf="userForm.controls['userFurigana'].hasError('pattern') && userForm.controls['userFurigana'].touched">
+                                    全角カタカナで入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>                    
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="電話番号" [formControl]="userForm.controls['tel']" maxlength="11" [(ngModel)]="user.tel">
+                                <md-error *ngIf="userForm.controls['tel'].hasError('required') && userForm.controls['tel'].touched">
+                                    入力してください
+                                </md-error>
+                                 <md-error *ngIf="userForm.controls['tel'].hasError('pattern') && userForm.controls['tel'].get('minLength(11)')===null && userForm.controls['tel'].touched">
+                                    11桁の半角数字で入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>                    
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="メールアドレス" [formControl]="userForm.controls['mail']" maxlength="255" [(ngModel)]="user.mail">
+                                <md-error *ngIf="userForm.controls['mail'].hasError('required') && userForm.controls['mail'].touched">
+                                    入力してください
+                                </md-error>
+                                 <md-error *ngIf="userForm.controls['mail'].hasError('pattern') && userForm.controls['mail'].touched">
+                                    メールアドレス形式で入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>                    
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="住所" [formControl]="userForm.controls['address']" maxlength="255" [(ngModel)]="user.address">
+                                <md-error *ngIf="!userForm.controls['address'].valid && userForm.controls['address'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <button md-raised-button [disabled]="!userForm.valid" color="primary" (click)="userPassSet()" routerLink="/userupdateconfirm" >確認</button>
+                    </tr>
+                </table>
+            </form>
+        </md-card-content>
+    </div>
+</md-card>

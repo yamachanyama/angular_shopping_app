@@ -49,9 +49,9 @@ export class UserService {
   }
 
     /** ユーザ更新 */
-  updateUser(id: number, user: User): Observable<User> {
+  updateUser(user: User): Observable<User> {
     this.blockUI.start('Waiting...'); 
-    return this.http.put(CONST.REST_API.BASE_URL + CONST.REST_API.USER_URL + id, JSON.stringify(user), {headers: this.headers})
+    return this.http.put(CONST.REST_API.BASE_URL + CONST.REST_API.USER_URL + user.userId, JSON.stringify(user), {headers: this.headers})
       .map((res) => {
         console.log(res);
         return res.json();

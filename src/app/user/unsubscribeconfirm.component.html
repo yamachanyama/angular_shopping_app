@@ -1,1 +1,21 @@
 <!-- 18_退会確認 -->
+<md-card>
+    <div fxLayoutWrap fxLayoutAlign="space-around center">
+        <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+            <h2>退会確認</h2>
+            <table>
+                <tr></tr>
+                <tr>
+                    <p>本当に退会しますか？</p>
+                    <p>退会すると全てのユーザ情報が削除されます。</p>
+                </tr>
+                <tr>
+                    <button md-raised-button color="primary" (click)="deleteUser(user.userId)" >退会する</button>                        
+                </tr>
+                <tr>
+                    <button md-raised-button color="primary" routerLink="/goodssearch" >やめる</button>
+                </tr>
+            </table>    
+        </md-card-content>
+    </div>
+</md-card>

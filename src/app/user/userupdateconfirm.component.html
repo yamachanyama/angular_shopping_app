@@ -1,1 +1,55 @@
 <!-- 15_ユーザ編集確認 -->
+<md-card>
+    <div fxLayoutWrap fxLayoutAlign="space-around center">
+        <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+            <h2>ユーザ編集確認</h2>
+            <table>
+                <!-- 
+                <tr>
+                    <label>ユーザID：{{user.userId}}</label>
+                    <br/>
+                    <br/>
+                </tr>
+                 -->
+                <tr>
+                    <label>パスワード：●●●●●●●●●●●●</label>
+                    <br/>
+                    <br/>
+                </tr>
+                <tr>
+                    <label>名前：{{user.userNm}}</label>
+                    <br/>
+                    <br/>
+                </tr>
+                <tr>
+                    <label>フリガナ(全角カタカナ)：{{user.userFurigana}}</label>
+                    <br/>
+                    <br/>
+                </tr>
+                <tr>
+                    <label>電話番号：{{user.tel}}</label>
+                    <br/>
+                    <br/>
+                </tr>
+                <tr>
+                    <label>メールアドレス：{{user.mail}}</label>
+                    <br/>
+                    <br/>
+                </tr>
+                <tr>
+                    <label>住所：{{user.address}}</label>
+                    <br/>
+                    <br/>
+                </tr>
+                <tr>
+                    <button md-raised-button color="primary" (click)="updateUser(user)">登録する</button>
+                </tr>
+                <!-- 
+                <tr>
+                    <button md-raised-button color="primary" (click)="userPassSet()" routerLink="/userupdate" >戻る</button>
+                </tr>
+                 -->
+            </table>
+        </md-card-content>
+    </div>
+</md-card>
