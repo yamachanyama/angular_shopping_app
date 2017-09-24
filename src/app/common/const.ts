@@ -12,6 +12,8 @@ export class CONST {
         GOODS_URL : 'goods/',
         /** userAPI */
         USER_URL : 'user/',
+        /** loginAPI */
+        LOGIN_URL : 'login/',
         /** reviewAPI */
         REVIEW_URL : 'review/',
         /** JSONPコールバック関数名 */

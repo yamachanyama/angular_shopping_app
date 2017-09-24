@@ -1,1 +1,43 @@
 <!-- 04_ログイン -->
+<md-card>
+    <div fxLayoutWrap fxLayoutAlign="space-around center">
+        <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+            <h2>ログイン</h2>
+            <form [formGroup]="userForm">
+                <table>
+                    <tr>
+                        <md-error *ngIf="loginError">
+                            ログインIDまたはパスワードがちがいます
+                        </md-error>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput  placeholder="ユーザID" [formControl]="userForm.controls['userId']" maxlength="10" [(ngModel)]="user.userId">
+                                <md-error *ngIf="!userForm.controls['userId'].valid && userForm.controls['userId'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="パスワード" [formControl]="userForm.controls['password']" maxlength="12" [(ngModel)]="user.password" type="password">
+                                <md-error *ngIf="userForm.controls['password'].hasError('required') && userForm.controls['password'].touched">
+                                    入力してください
+                                </md-error>
+                                <md-error *ngIf="userForm.controls['password'].hasError('pattern') && userForm.controls['password'].touched">
+                                    6~12桁の半角英数字で入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <button md-raised-button [disabled]="!userForm.valid" color="primary" (click)="login()" >ログイン</button>
+                    </tr>
+                </table>
+            </form>
+        </md-card-content>
+    </div>
+</md-card>
