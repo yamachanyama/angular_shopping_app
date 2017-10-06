@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { UserPassService } from '../services/userpass.service';
 import { UserService } from '../services/user.service';
 import { User } from '../services/user';
+import { AuthService } from '../services/auth.service';
 import { CONST} from '../common/const';
 import { Router } from '@angular/router';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
@@ -23,7 +24,7 @@ export class LoginComponent {
   // ログインエラー
   loginError : boolean = false;
   // コンポーネント生成時の処理
-  constructor(fb: FormBuilder, private userPassService: UserPassService, private userService : UserService, private router: Router){
+  constructor(fb: FormBuilder, private userPassService: UserPassService, private userService : UserService, private router: Router, private authService: AuthService){
   // 入力フォーム入力チェック定義
   this.userForm = fb.group({
       // ユーザID：
@@ -40,15 +41,17 @@ export class LoginComponent {
   
     /** ログイン処理 */
   login(): void {
-    //TODO　ログイン認証処理を書く
-
-    //ログイン成功時の画面遷移(ひとまず認証なしで商品検索へ遷移)
-    this.goLoginFinish();
-  }
-
-    /** ログイン成功後の画面遷移 */
-  goLoginFinish() {
-    this.blockUI.stop();
-    this.router.navigate(['goodssearch']);
+    this.authService.login(this.user).subscribe(
+      result => {
+        if (result !== null && result.userNm !== null && result.userNm !== undefined) {
+          //認証失敗してログイン画面にリダイレクトした場合はログイン後にその画面に遷移する
+          //リダイレクトじゃない場合は商品検索画面に遷移する
+          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : 'goodssearch';
+          this.router.navigate([redirect]);
+        } else {
+          this.loginError = true;
+        }
+      }
+    );
   }
 }

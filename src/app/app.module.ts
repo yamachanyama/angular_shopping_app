@@ -25,6 +25,7 @@ import { TopComponent }   from './top/top.component';
 import { UserRegistComponent } from './user/userregist.component';
 import { UserRegistFinishComponent } from './user/userregistfinish.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './login/logout.component';
 import { GoodsSearchComponent }      from './goods/goodssearch.component';
 import { GoodsDetailComponent }  from './goods/goodsdetail.component';
 import { GoodsRegistComponent }  from './goods/goodsregist.component';
@@ -48,6 +49,9 @@ import { GoodsPassService } from './services/goodspass.service';
 import { UserService } from './services/user.service';
 import { UserPassService } from './services/userpass.service';
 
+//認証情報取得用service
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   /* コンポーネントを追加する場合は以下に追加 */
@@ -57,6 +61,7 @@ import { UserPassService } from './services/userpass.service';
     UserRegistComponent,
     UserRegistFinishComponent,
     LoginComponent,
+    LogoutComponent,
     GoodsSearchComponent,
     GoodsDetailComponent,
     GoodsRegistComponent,
@@ -95,7 +100,9 @@ import { UserPassService } from './services/userpass.service';
     GoodsService,
     GoodsPassService,
     UserService,
-    UserPassService
+    UserPassService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

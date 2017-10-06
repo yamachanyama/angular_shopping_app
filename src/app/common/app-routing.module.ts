@@ -1,11 +1,13 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard }            from '../services/auth-guard.service';
 
 /*画面遷移先を追加する場合は以下にimport追記*/
 import { TopComponent }   from '../top/top.component';
 import { UserRegistComponent } from '../user/userregist.component';
 import { UserRegistFinishComponent } from '../user/userregistfinish.component';
 import { LoginComponent } from '../login/login.component';
+import { LogoutComponent } from '../login/logout.component';
 import { GoodsSearchComponent }      from '../goods/goodssearch.component';
 import { GoodsDetailComponent }  from '../goods/goodsdetail.component';
 import { GoodsRegistComponent }  from '../goods/goodsregist.component';
@@ -21,24 +23,26 @@ import { UnsubscribeFinishComponent } from '../user/unsubscribefinish.component'
 
 
 /*画面遷移先を追加する場合は以下に遷移時のパスと起動モジュールを定義*/
+/*認証が必要なパスには「canActivate: [ AuthGuard ]」を追記*/
 const routes: Routes = [
   { path: '', redirectTo: '/top', pathMatch: 'full' },
   { path: 'top', component: TopComponent },  
   { path: 'userregist', component: UserRegistComponent},
   { path: 'userregistfinish', component: UserRegistFinishComponent},
-  { path: 'login', component: LoginComponent },  
-  { path: 'goodssearch',  component: GoodsSearchComponent },
-  { path: 'goodsdetail/:id', component: GoodsDetailComponent },
-  { path: 'goodsregist', component: GoodsRegistComponent },
-  { path: 'goodsregistconfirm', component: GoodsRegistConfirmComponent},
-  { path: 'goodsregistfinish', component: GoodsRegistFinishComponent},
-  { path: 'registedgoodssearch', component: RegistedGoodsSearchComponent},
-  { path: 'userupdate', component: UserUpdateComponent },
-  { path: 'userupdateconfirm', component: UserUpdateConfirmComponent},
-  { path: 'userupdatefinish', component: UserUpdateFinishComponent},
-  { path: 'unsubscribe', component: UnsubscribeComponent },
-  { path: 'unsubscribeconfirm', component: UnsubscribeConfirmComponent},
-  { path: 'unsubscribefinish', component: UnsubscribeFinishComponent},
+  { path: 'login', component: LoginComponent }, 
+  { path: 'logout', component: LogoutComponent, canActivate: [ AuthGuard ] },  
+  { path: 'goodssearch',  component: GoodsSearchComponent},
+  { path: 'goodsdetail/:id', component: GoodsDetailComponent},
+  { path: 'goodsregist', component: GoodsRegistComponent, canActivate: [ AuthGuard ] },
+  { path: 'goodsregistconfirm', component: GoodsRegistConfirmComponent, canActivate: [ AuthGuard ]},
+  { path: 'goodsregistfinish', component: GoodsRegistFinishComponent, canActivate: [ AuthGuard ]},
+  { path: 'registedgoodssearch', component: RegistedGoodsSearchComponent, canActivate: [ AuthGuard ]},
+  { path: 'userupdate', component: UserUpdateComponent, canActivate: [ AuthGuard ] },
+  { path: 'userupdateconfirm', component: UserUpdateConfirmComponent, canActivate: [ AuthGuard ]},
+  { path: 'userupdatefinish', component: UserUpdateFinishComponent, canActivate: [ AuthGuard ]},
+  { path: 'unsubscribe', component: UnsubscribeComponent, canActivate: [ AuthGuard ] },
+  { path: 'unsubscribeconfirm', component: UnsubscribeConfirmComponent, canActivate: [ AuthGuard ]},
+  { path: 'unsubscribefinish', component: UnsubscribeFinishComponent, canActivate: [ AuthGuard ]},
 ];
 
 @NgModule({
