@@ -44,6 +44,7 @@ export class LoginComponent {
     this.authService.login(this.user).subscribe(
       result => {
         if (result !== null && result.userNm !== null && result.userNm !== undefined) {
+          this.userPassService.setUser(result);
           //認証失敗してログイン画面にリダイレクトした場合はログイン後にその画面に遷移する
           //リダイレクトじゃない場合は商品検索画面に遷移する
           let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : 'goodssearch';

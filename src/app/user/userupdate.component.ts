@@ -18,6 +18,7 @@ export class UserUpdateComponent {
   user = new User;
   // コンポーネント生成時の処理
   constructor(fb: FormBuilder, private userPassService: UserPassService){
+    this.user = userPassService.getUser();
     // 入力フォーム入力チェック定義
     this.userForm = fb.group({
       // ユーザID：
