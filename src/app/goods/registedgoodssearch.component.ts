@@ -12,7 +12,7 @@ import { CONST } from '../common/const';
   styleUrls: ['./registedgoodssearch.component.css'],
 })
 
-export class RegistedGoodsSearchComponent  implements OnInit{
+export class RegistedGoodsSearchComponent {
 
   //コンポーネント生成時の処理
   constructor(
