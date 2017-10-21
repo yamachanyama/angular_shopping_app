@@ -17,7 +17,7 @@
             <md-card *ngFor = "let goods of goodsList" fxFlex="32%" fxFlex.xs="100%">
                 <a [routerLink]="['/goodsdetail', goods.goodsId]"><img md-card-image src="{{googleDrivePictureUrl}}{{goods.picture}}" ></a>
                 <md-card-content>
-                <a md-raised-button [routerLink]="['/goodsdetail', goods.goodsId]">{{goods.goodsNm}}</a>
+                <a md-raised-button [routerLink]="['/goodsupdate', goods.goodsId]">{{goods.goodsNm}}</a>
                 </md-card-content>
                 <md-card-content>
                 <p>価格：¥{{goods.price}}</p>

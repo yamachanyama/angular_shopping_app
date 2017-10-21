@@ -31,6 +31,9 @@ import { GoodsDetailComponent }  from './goods/goodsdetail.component';
 import { GoodsRegistComponent }  from './goods/goodsregist.component';
 import { GoodsRegistConfirmComponent }  from './goods/goodsregistconfirm.component';
 import { GoodsRegistFinishComponent }  from './goods/goodsregistfinish.component';
+import { GoodsUpdateComponent }  from './goods/goodsupdate.component';
+import { GoodsUpdateConfirmComponent }  from './goods/goodsupdateconfirm.component';
+import { GoodsUpdateFinishComponent }  from './goods/goodsupdatefinish.component';
 import { RegistedGoodsSearchComponent } from './goods/registedgoodssearch.component';
 import { UserUpdateComponent } from './user/userupdate.component';
 import { UserUpdateConfirmComponent } from './user/userupdateconfirm.component';
@@ -67,6 +70,9 @@ import { AuthGuard } from './services/auth-guard.service';
     GoodsRegistComponent,
     GoodsRegistConfirmComponent,
     GoodsRegistFinishComponent,
+    GoodsUpdateComponent,
+    GoodsUpdateConfirmComponent,
+    GoodsUpdateFinishComponent,
     RegistedGoodsSearchComponent,
     UserUpdateComponent,
     UserUpdateConfirmComponent,

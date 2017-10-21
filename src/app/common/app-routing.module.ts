@@ -13,6 +13,9 @@ import { GoodsDetailComponent }  from '../goods/goodsdetail.component';
 import { GoodsRegistComponent }  from '../goods/goodsregist.component';
 import { GoodsRegistConfirmComponent }  from '../goods/goodsregistconfirm.component';
 import { GoodsRegistFinishComponent }  from '../goods/goodsregistfinish.component';
+import { GoodsUpdateComponent }  from '../goods/goodsupdate.component';
+import { GoodsUpdateConfirmComponent }  from '../goods/goodsupdateconfirm.component';
+import { GoodsUpdateFinishComponent }  from '../goods/goodsupdatefinish.component';
 import { RegistedGoodsSearchComponent } from '../goods/registedgoodssearch.component';
 import { UserUpdateComponent } from '../user/userupdate.component';
 import { UserUpdateConfirmComponent } from '../user/userupdateconfirm.component';
@@ -36,6 +39,9 @@ const routes: Routes = [
   { path: 'goodsregist', component: GoodsRegistComponent, canActivate: [ AuthGuard ] },
   { path: 'goodsregistconfirm', component: GoodsRegistConfirmComponent, canActivate: [ AuthGuard ]},
   { path: 'goodsregistfinish', component: GoodsRegistFinishComponent, canActivate: [ AuthGuard ]},
+  { path: 'goodsupdate/:id', component: GoodsUpdateComponent, canActivate: [ AuthGuard ] },
+  { path: 'goodsupdateconfirm', component: GoodsUpdateConfirmComponent, canActivate: [ AuthGuard ]},
+  { path: 'goodsupdatefinish', component: GoodsUpdateFinishComponent, canActivate: [ AuthGuard ]},
   { path: 'registedgoodssearch', component: RegistedGoodsSearchComponent, canActivate: [ AuthGuard ]},
   { path: 'userupdate', component: UserUpdateComponent, canActivate: [ AuthGuard ] },
   { path: 'userupdateconfirm', component: UserUpdateConfirmComponent, canActivate: [ AuthGuard ]},
