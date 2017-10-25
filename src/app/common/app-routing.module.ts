@@ -5,6 +5,7 @@ import { AuthGuard }            from '../services/auth-guard.service';
 /*画面遷移先を追加する場合は以下にimport追記*/
 import { TopComponent }   from '../top/top.component';
 import { UserRegistComponent } from '../user/userregist.component';
+import { UserRegistConfirmComponent } from '../user/userregistconfirm.component';
 import { UserRegistFinishComponent } from '../user/userregistfinish.component';
 import { LoginComponent } from '../login/login.component';
 import { LogoutComponent } from '../login/logout.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/top', pathMatch: 'full' },
   { path: 'top', component: TopComponent },  
   { path: 'userregist', component: UserRegistComponent},
+  { path: 'userregistconfirm', component: UserRegistConfirmComponent},
   { path: 'userregistfinish', component: UserRegistFinishComponent},
   { path: 'login', component: LoginComponent }, 
   { path: 'logout', component: LogoutComponent, canActivate: [ AuthGuard ] },  

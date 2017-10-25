@@ -23,6 +23,7 @@ import { FancyImageUploaderModule } from 'ng2-fancy-image-uploader';
 import { AppComponent } from './app.component';
 import { TopComponent }   from './top/top.component';
 import { UserRegistComponent } from './user/userregist.component';
+import { UserRegistConfirmComponent } from './user/userregistconfirm.component';
 import { UserRegistFinishComponent } from './user/userregistfinish.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './login/logout.component';
@@ -62,6 +63,7 @@ import { AuthGuard } from './services/auth-guard.service';
     AppComponent,
     TopComponent,
     UserRegistComponent,
+    UserRegistConfirmComponent,
     UserRegistFinishComponent,
     LoginComponent,
     LogoutComponent,
