@@ -1,6 +1,6 @@
 <!-- 99_ヘッダ -->
 <md-toolbar color="primary">
-    <img src="../favicon.ico">
+    <a routerLink="/top"><img src="assets/logo_small.png" ></a>
     <span class="example-spacer"></span>
     <button md-icon-button [mdMenuTriggerFor]="menu" #menuTrigger="mdMenuTrigger" (mouseenter)="menuTrigger.openMenu()">
         <md-icon>menu</md-icon>
@@ -21,6 +21,10 @@
         <button md-menu-item routerLink="/goodsregist">
             <md-icon>add_to_photos</md-icon>
             <span>商品登録</span>
+        </button>
+        <button md-menu-item routerLink="/goodssearch">
+            <md-icon>search</md-icon>
+            <span>商品検索</span>
         </button>
         <button md-menu-item routerLink="/registedgoodssearch">
             <md-icon>search</md-icon>
