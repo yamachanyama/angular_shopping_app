@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoodsPassService } from '../services/goodspass.service';
+import { UserPassService } from '../services/userpass.service';
 import { GoodsService } from '../services/goods.service';
 import { Goods } from '../services/goods';
 import { CONST } from '../common/const';
@@ -17,10 +18,10 @@ export class GoodsRegistConfirmComponent{
   //Google Drive上の画像URL
   googleDrivePictureUrl = CONST.REST_API.GOOGLE_DRIVE_PICTURE_URL;
   
-  constructor(private goodsPassService: GoodsPassService, private goodsService : GoodsService, private router: Router) { 
+  constructor(private userPassService: UserPassService, private goodsPassService: GoodsPassService, private goodsService : GoodsService, private router: Router) { 
     this.goods = goodsPassService.getGoods();
-    // TODO:ログインユーザのIDを指定する
-    this.goods.registerId = "5";
+    // ログインユーザのIDを指定
+    this.goods.registerId = userPassService.getUser().userId;
   }
 
   /** 商品登録 */

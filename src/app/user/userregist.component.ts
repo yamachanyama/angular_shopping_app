@@ -16,10 +16,15 @@ export class UserRegistComponent {
   userForm : FormGroup;
   // 入力フォーム入力値
   user = new User;
+  // 確認画面から戻ってきたときの判定
+  isReturn: boolean = false;
    
   // コンポーネント生成時の処理
   constructor(fb: FormBuilder, private userPassService: UserPassService){
-   
+    
+    if(userPassService.getUser() !== undefined){
+    this.user = userPassService.getUser();
+    }
     // 入力フォーム入力チェック定義
     this.userForm = fb.group({
    

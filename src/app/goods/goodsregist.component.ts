@@ -17,6 +17,8 @@ export class GoodsRegistComponent{
   goodsForm : FormGroup;
   // 入力フォーム入力値
   goods = new Goods;
+  // 確認画面から戻ってきたときの判定
+  isReturn: boolean = false;
   // ファイルアップロードエリア定義
   options: FancyImageUploaderOptions = {
     thumbnailHeight: 150,
@@ -28,6 +30,11 @@ export class GoodsRegistComponent{
 
   // コンポーネント生成時の処理
   constructor(fb: FormBuilder, private goodsPassService: GoodsPassService){
+
+    if(goodsPassService.getGoods() !== undefined){
+    this.goods = goodsPassService.getGoods();
+    }
+
     // 入力フォーム入力チェック定義
     this.goodsForm = fb.group({
       // 商品名：必須チェック
