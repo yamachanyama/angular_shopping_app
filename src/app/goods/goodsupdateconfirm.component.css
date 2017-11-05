@@ -1,0 +1,8 @@
+form,tr,table,md-input-container,button {
+    width:100%;
+}
+
+img {
+    height: 150px;
+    width : 150px;
+}

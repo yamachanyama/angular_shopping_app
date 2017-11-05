@@ -89,8 +89,16 @@ export class GoodsService {
     
   }
 
-
-
+  /** 商品更新 */
+  updateGoods(goods: Goods): Observable<Goods> {
+    this.blockUI.start('Waiting...i am updating now...'); 
+    return this.http.put(CONST.REST_API.BASE_URL + CONST.REST_API.GOODS_URL + goods.goodsId, JSON.stringify(goods), {headers: this.headers})
+      .map((res) => {
+        console.log(res);
+        return res.json();
+      });
+    
+  }
 
   //Http(Get)通信のリクエストパラメータをセットする
   private setHttpGetParam(url: string, sortField: string, sortOrder: string, conditionField: string, conditionValue: string): RequestOptions {

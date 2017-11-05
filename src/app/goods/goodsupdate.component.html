@@ -1,1 +1,78 @@
 <!-- 11_商品編集 -->
+<md-card>
+    <div fxLayoutWrap fxLayoutAlign="space-around center">
+        <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+            <h2>商品情報編集</h2>
+            <form [formGroup]="goodsForm">
+                <table>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="商品名（必須）" [formControl]="goodsForm.controls['goodsNm']" maxlength="255" [(ngModel)]="goods.goodsNm">
+                                <md-error *ngIf="!goodsForm.controls['goodsNm'].valid && goodsForm.controls['goodsNm'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput type="number" placeholder="値段（必須）" [formControl]="goodsForm.controls['price']" maxlength="8" [(ngModel)]="goods.price">
+                                <md-error *ngIf="!goodsForm.controls['price'].valid && goodsForm.controls['price'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput type="number" placeholder="在庫数（必須）" [formControl]="goodsForm.controls['stock']"  maxlength="4" [(ngModel)]="goods.stock">
+                                <md-error *ngIf="!goodsForm.controls['stock'].valid && goodsForm.controls['stock'].touched">
+                                    入力してください
+                                </md-error>
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <textarea mdInput placeholder="基本情報（必須）" rows="5" [formControl]="goodsForm.controls['basicInfo']"  maxlength="1000" [(ngModel)]="goods.basicInfo"></textarea>
+                                <md-error *ngIf="!goodsForm.controls['basicInfo'].valid && goodsForm.controls['basicInfo'].touched">
+                                    入力してください
+                                </md-error>                            
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <md-input-container>
+                            <input mdInput placeholder="キーワード" maxlength="255" [(ngModel)]="goods.keyword" [ngModelOptions]="{standalone: true}">
+                        </md-input-container>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                        <label>画像</label>
+                        <br/>
+                        <div class="boxContainer">
+                            <div class="box">
+                              <img *ngIf="goods.picture" src="{{googleDrivePictureUrl}}{{goods.picture}}">
+                            </div>
+                            <div class="box">
+                                <fancy-image-uploader [options]="options" (onUpload)="onUpload($event)"></fancy-image-uploader>
+                                <md-input-container class="hidden">
+                                    <input mdInput placeholder="画像" class="hidden" maxlength="255" [(ngModel)]="goods.picture" [ngModelOptions]="{standalone: true}">
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </tr>
+                </table>
+                <div class="footer">
+                    <button md-raised-button routerLink="/registedgoodssearch" >戻る</button>
+                    <button style="margin-left:10px;" md-raised-button [disabled]="!goodsForm.valid" color="primary" (click)="goodsPassSet()" routerLink="/goodsupdateconfirm" >確認画面へ</button>
+                </div>
+            </form>
+        </md-card-content>
+    </div>
+</md-card>
