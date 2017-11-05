@@ -26,8 +26,11 @@ export class AuthService {
     return this.http.post(CONST.REST_API.BASE_URL + CONST.REST_API.LOGIN_URL, JSON.stringify(user), {headers: this.headers})
     .map((response) => {
       this.blockUI.stop();
-      this.isLoggedIn = true  
-      return response.text()===''?null:response.json();
+      
+      if (response.json()!=null) {
+        this.isLoggedIn = true
+      }
+      return response.json();
     });
   }
 
