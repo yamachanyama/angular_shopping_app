@@ -1,2 +1,24 @@
 /* 全画面に適用させるレイアウト設定 */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* テーマカラーをオレンジに変更*/
+.mat-option.mat-selected.mat-primary,.mat-primary .mat-option.mat-selected{color:#ff7f00}
+.mat-primary .mat-pseudo-checkbox-checked,.mat-primary .mat-pseudo-checkbox-indeterminate,.mat-pseudo-checkbox-checked.mat-primary,.mat-pseudo-checkbox-indeterminate.mat-primary{background:#ff7f00}
+.mat-button.mat-primary,.mat-icon-button.mat-primary{color:#ff7f00}
+.mat-fab.mat-primary,.mat-mini-fab.mat-primary,.mat-raised-button.mat-primary{background-color:#ff7f00}
+.mat-checkbox-checked.mat-primary .mat-checkbox-background,.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background{background-color:#ff7f00}
+.mat-chip.mat-chip-selected:not(.mat-basic-chip).mat-primary{background-color:#ff7f00;color:rgba(255,255,255,.87)}
+.mat-calendar-body-selected{background-color:#ff7f00;color:rgba(255,255,255,.87)}
+.mat-icon.mat-primary{color:#ff7f00}
+.mat-focused .mat-input-placeholder{color:#ff7f00}
+.mat-input-ripple{background-color:#ff7f00}
+.mat-progress-bar-buffer{background-color:#d1c4e9}.mat-progress-bar-fill::after{background-color:#ff7f00}
+.mat-progress-spinner path,.mat-spinner path{stroke:#ff7f00}
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle{border-color:#ff7f00}
+.mat-radio-button.mat-primary .mat-radio-inner-circle{background-color:#ff7f00}
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-arrow,.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-trigger{color:#ff7f00}
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-underline{background-color:#ff7f00}
+.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb{background-color:#ff7f00}
+.mat-primary .mat-slider-thumb,.mat-primary .mat-slider-thumb-label,.mat-primary .mat-slider-track-fill{background-color:#ff7f00}
+.mat-ink-bar{background-color:#ff7f00}
+.mat-toolbar.mat-primary{background:#ff7f00;color:rgba(255,255,255,.87)}
