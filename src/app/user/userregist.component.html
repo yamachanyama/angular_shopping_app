@@ -36,7 +36,7 @@
     
                             <md-input-container>
     
-                                <input mdInput type="number" placeholder="パスワード（必須）" [formControl]="userForm.controls['password']" maxlength="12" [(ngModel)]="user.password">
+                                <input mdInput placeholder="パスワード（必須）" [formControl]="userForm.controls['password']" maxlength="12" [(ngModel)]="user.password" type="password">
     
                                     <md-error *ngIf="!userForm.controls['password'].valid && userForm.controls['password'].touched">
     

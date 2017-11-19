@@ -54,7 +54,7 @@ export class UserRegistComponent {
    
 　　// 住所：必須チェック
 　　'address' : [null, Validators.required],
-　　});
+　　},{ 'validator': this.passwordMatchValidator });
 
  }
 
@@ -62,4 +62,10 @@ export class UserRegistComponent {
   userPassSet() {
       this.userPassService.setUser(this.user);
     }
+
+  /** パスワードとパスワード(確認用)の一致判定 */
+  passwordMatchValidator(g: FormGroup) {
+  return g.get('password').value === g.get('passwordConf').value
+       ? null: {'mismatch': true};
+ }
 }
