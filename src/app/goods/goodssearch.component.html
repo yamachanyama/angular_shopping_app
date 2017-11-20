@@ -14,7 +14,7 @@
       <button md-button color="primary" (click)="onClickSort('regist_date','desc')"><span>新着順</span><md-icon>sort</md-icon></button>
     </div>
     <div fxLayoutWrap fxLayoutAlign="space-around center" fxLayout="row">
-      <md-card *ngFor = "let goods of goodsList" fxFlex="32%" fxFlex.xs="100%">
+      <md-card *ngFor = "let goods of goodsList" fxFlex="28%" fxFlex.xs="100%">
         <a [routerLink]="['/goodsdetail', goods.goodsId]"><img md-card-image src="{{googleDrivePictureUrl}}{{goods.picture}}" ></a>
         <md-card-content>
           <a md-raised-button [routerLink]="['/goodsdetail', goods.goodsId]">{{goods.goodsNm}}</a>
