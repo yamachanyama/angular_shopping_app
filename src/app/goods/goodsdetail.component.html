@@ -1,7 +1,7 @@
 <!-- 06_商品詳細参照 -->
 <md-card>
-  <md-card-content>
-    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around center">
+  <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around top" fxFlex="70%">
       <md-card fxFlex="60%" fxFlex.xs="100%">
         <img md-card-image src="{{googleDrivePictureUrl}}{{goods.picture}}" style="margin-top:0px;">
       </md-card>
@@ -18,8 +18,8 @@
     </div>
   </md-card-content>
   <br/>
-  <md-card-content>
-    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around center">
+  <md-card-content fxLayoutWrap fxLayoutAlign="space-around center">
+    <div *ngIf="goods" fxLayoutWrap fxLayoutAlign="space-around top" fxFlex="70%">
       <button md-raised-button fxFlex="80%" fxFlex.xs="80%" color="primary">カートに入れる</button>
     </div>
   </md-card-content>

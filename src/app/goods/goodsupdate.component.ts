@@ -15,7 +15,7 @@ import { FancyImageUploaderOptions, UploadedFile } from 'ng2-fancy-image-uploade
   styleUrls: ['./goodsupdate.component.css'],
 })
 
-export class GoodsUpdateComponent {
+export class GoodsUpdateComponent implements OnInit{
   // 入力フォーム入力チェック定義
   goodsForm : FormGroup;
   // 入力フォーム入力値
@@ -53,25 +53,15 @@ export class GoodsUpdateComponent {
       // 写真：入力チェックなし
       'picture' : false
     });
-}
-
+  }
 
   //コンポーネントの初期処理
   ngOnInit(): void {
-    // alert("******* start init");
-    // 内部データがある場合はそちらを設定
-    if (this.goodsPassService.getGoods() != null) {
-      // alert("******* hold data ");
-      this.goods = this.goodsPassService.getGoods();
-    } else {
-      // alert("******* no hold data ");
-      this.route.params
-        .switchMap((params: Params) => this.goodsService.getGoods(+params['id']))
-          .subscribe(
-            result => this.setGoods(result));
-    }
+    this.route.params
+      .switchMap((params: Params) => this.goodsService.getGoods(+params['id']))
+        .subscribe(
+          result => this.setGoods(result));
   }
-
 
   /** Rest APIから取得した結果を画面にセットする処理 */
   setGoods(result) {
@@ -92,4 +82,7 @@ export class GoodsUpdateComponent {
     console.log(file.response);
     this.goods.picture = file.response;
   }
+
 }
+
+
