@@ -43,4 +43,10 @@ export class GoodsUpdateConfirmComponent {
     this.router.navigate(['goodsupdatefinish']);
   }
 
+  /** 戻るボタン押下時の画面遷移 */
+  backRegist() {
+    this.goodsPassService.setRefleshFlg(false);
+    this.router.navigate(['goodsupdate', this.goods.goodsId]);
+  }
+
 }

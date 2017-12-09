@@ -8,10 +8,10 @@
       <md-card fxFlex="38%" fxFlex.xs="100%">
         <md-card-content>
           <p>商品名：{{goods.goodsNm}}</p>
-          <p>値段：¥{{goods.price}}</p>
-          <p *ngIf="goods.stock > 5">在庫：{{goods.stock}}(在庫あり)</p>
-          <p *ngIf="goods.stock < 5 && goods.stock > 0">在庫：{{goods.stock}}(残りわずか)</p>
-          <p *ngIf="goods.stock == 0">在庫：{{goods.stock}}(在庫切れ)</p>
+          <p>値段：¥{{goods.price | number}}</p>
+          <p *ngIf="goods.stock > 5">在庫：{{goods.stock | number}}(在庫あり)</p>
+          <p *ngIf="goods.stock < 5 && goods.stock > 0">在庫：{{goods.stock | number}}(残りわずか)</p>
+          <p *ngIf="goods.stock == 0">在庫：{{goods.stock | number}}(在庫切れ)</p>
           <p>基本情報：{{goods.basicInfo}}</p>
         </md-card-content>
       </md-card>

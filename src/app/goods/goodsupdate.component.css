@@ -1,22 +1,19 @@
-form,tr,table,md-input-container{
+form,tr,table,md-input-container,button{
     width:100%;
 }
+
 
 .hidden {
     display:none;
 }
-/** フッター **/
-.footer {
-    text-align: center;
-}
-img {
-    height: 150px;
-    width : 150px;
+
+.changeImg {
+    width:150px !important;
+    display: block;
 }
 
-.box{
-  float: left;
+img {
+    width : 150px;
+    height: flex;    
 }
-.boxContainer{
-  overflow: hidden;
-}
+

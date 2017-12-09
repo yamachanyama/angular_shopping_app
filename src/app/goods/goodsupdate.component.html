@@ -54,24 +54,18 @@
                     </tr>
                     <tr>
                         <label>画像</label>
-                        <br/>
-                        <div class="boxContainer">
-                            <div class="box">
-                              <img *ngIf="goods.picture" src="{{googleDrivePictureUrl}}{{goods.picture}}">
-                            </div>
-                            <div class="box">
-                                <fancy-image-uploader [options]="options" (onUpload)="onUpload($event)"></fancy-image-uploader>
-                                <md-input-container class="hidden">
-                                    <input mdInput placeholder="画像" class="hidden" maxlength="255" [(ngModel)]="goods.picture" [ngModelOptions]="{standalone: true}">
-                                </md-input-container>
-                            </div>
-                        </div>
+                        <button *ngIf="goods.picture" md-raised-button color="accent" class="changeImg" (click)="changeImage()"><label>変更</label><md-icon>cached</md-icon></button>
+                        <fancy-image-uploader *ngIf="!goods.picture" [options]="options" (onUpload)="onUpload($event)" (change)="fileChangeEvent($event)"></fancy-image-uploader>
+                        <img *ngIf="goods.picture" src="{{googleDrivePictureUrl}}{{goods.picture}}">
+                        <md-input-container class="hidden">
+                            <input mdInput placeholder="画像" class="hidden" maxlength="255" [(ngModel)]="goods.picture" [ngModelOptions]="{standalone: true}">
+                        </md-input-container>
+                    </tr>
+                    <tr>
+                        <td><button md-raised-button routerLink="/registedgoodssearch">戻る</button></td>
+                        <td><button md-raised-button [disabled]="!goodsForm.valid" color="primary" (click)="goodsPassSet()" routerLink="/goodsupdateconfirm">確認画面へ</button></td>
                     </tr>
                 </table>
-                <div class="footer">
-                    <button md-raised-button routerLink="/registedgoodssearch" >戻る</button>
-                    <button style="margin-left:10px;" md-raised-button [disabled]="!goodsForm.valid" color="primary" (click)="goodsPassSet()" routerLink="/goodsupdateconfirm" >確認画面へ</button>
-                </div>
             </form>
         </md-card-content>
     </div>
