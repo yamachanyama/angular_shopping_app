@@ -4,7 +4,7 @@ import { FancyImageUploaderOptions, UploadedFile } from 'ng2-fancy-image-uploade
 import { GoodsPassService } from '../services/goodspass.service';
 import { Goods } from '../services/goods';
 import { CONST} from '../common/const';
-
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
   selector: 'app-goodsregist',
@@ -12,13 +12,13 @@ import { CONST} from '../common/const';
   styleUrls: ['./goodsregist.component.css'],
 })
 export class GoodsRegistComponent{
-
+  @BlockUI() blockUI: NgBlockUI;
   // 入力フォーム入力チェック定義
   goodsForm : FormGroup;
   // 入力フォーム入力値
   goods = new Goods;
-  // 確認画面から戻ってきたときの判定
-  isReturn: boolean = false;
+  // 画面更新モードの判定
+  private isUpdate: boolean = false;
   // ファイルアップロードエリア定義
   options: FancyImageUploaderOptions = {
     thumbnailHeight: 150,
@@ -27,13 +27,24 @@ export class GoodsRegistComponent{
     allowedImageTypes: ['image/png', 'image/jpeg'],
     maxImageSize: 3
   };
+  //Google Drive上の画像URL
+  googleDrivePictureUrl = CONST.REST_API.GOOGLE_DRIVE_PICTURE_URL;
 
   // コンポーネント生成時の処理
   constructor(fb: FormBuilder, private goodsPassService: GoodsPassService){
 
-    if(goodsPassService.getGoods() !== undefined){
-    this.goods = goodsPassService.getGoods();
+    // 画面間で引き継いだ商品のリフレッシュ処理
+    if(goodsPassService.getRefleshFlg()) {
+      goodsPassService.refleshGoods();
+      this.isUpdate = false;
+    }else {
+      goodsPassService.setRefleshFlg(true);
+      this.isUpdate = true;
     }
+    if(goodsPassService.getGoods() !== undefined){
+      this.goods = goodsPassService.getGoods();
+    }
+
 
     // 入力フォーム入力チェック定義
     this.goodsForm = fb.group({
@@ -58,10 +69,21 @@ export class GoodsRegistComponent{
     this.goodsPassService.setGoods(this.goods);
   }
 
-  /** ファイルアップロードエリア設定時の処理 */ 
+  /** ファイルアップロードエリア画像設定完了時の処理 */ 
   onUpload(file: UploadedFile) {
-    console.log(file.response);
     this.goods.picture = file.response;
+    this.blockUI.stop();
+  }
+
+  /** ファイルアップロードエリア画像設定時の処理 */
+  fileChangeEvent(file: UploadedFile) {
+    this.blockUI.start('Waiting...');
+  }
+
+  /** 画像変更ボタン押下時の処理 */
+  changeImage() {
+    this.goods.picture = "";
+    this.goodsPassService.setGoods(this.goods);
   }
 
 }

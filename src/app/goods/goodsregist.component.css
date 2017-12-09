@@ -5,3 +5,12 @@ form,tr,table,md-input-container,button {
 .hidden {
     display:none;
 }
+
+.changeImg {
+    width:150px !important;
+    display: block;
+}
+img {
+    width:150px;
+    height:flex;
+}

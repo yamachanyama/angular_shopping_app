@@ -25,6 +25,7 @@ export class UserRegistComponent {
     if(userPassService.getUser() !== undefined){
     this.user = userPassService.getUser();
     }
+
     // 入力フォーム入力チェック定義
     this.userForm = fb.group({
    

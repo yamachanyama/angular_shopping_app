@@ -42,5 +42,10 @@ export class GoodsRegistConfirmComponent{
     this.router.navigate(['goodsregistfinish']);
   }
 
+  /** 戻るボタン押下時の画面遷移 */
+  backRegist() {
+    this.goodsPassService.setRefleshFlg(false);
+    this.router.navigate(['goodsregist']);
+  }
 
 }
