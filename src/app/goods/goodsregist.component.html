@@ -55,7 +55,7 @@
                     <tr>
                         <label>画像</label>
                         <button *ngIf="isUpdate && goods.picture" md-raised-button color="accent" class="changeImg" (click)="changeImage()"><label>変更</label><md-icon>cached</md-icon></button>
-                        <fancy-image-uploader *ngIf="!isUpdate || !goods.picture" [options]="options" (onUpload)="onUpload($event)" (change)="fileChangeEvent($event)"></fancy-image-uploader>
+                        <fancy-image-uploader *ngIf="!isUpdate || !goods.picture" [options]="options" (onUpload)="onUpload($event)" (drop)="fileChangeEvent($event)" (change)="fileChangeEvent($event)"></fancy-image-uploader>
                         <img *ngIf="isUpdate && goods.picture" src="{{googleDrivePictureUrl}}{{goods.picture}}">
                         <md-input-container class="hidden">
                             <input mdInput placeholder="画像" class="hidden" maxlength="255" [(ngModel)]="goods.picture" [ngModelOptions]="{standalone: true}">
